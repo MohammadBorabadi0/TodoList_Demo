@@ -4,7 +4,7 @@ import { useTodo } from "../Provider/context/todo_context";
 
 const TodoForm = () => {
   const [inputVal, setInputVal] = useState("");
-  const { inputRef, dispatch } = useTodo();
+  const { inputRef, todos, dispatch } = useTodo();
 
   const handeSubmit = (e) => {
     e.preventDefault();
@@ -17,9 +17,14 @@ const TodoForm = () => {
     setInputVal("");
   };
 
+  // useEffect(() => {
+  //   inputRef.current.focus();
+  //   localStorage.setItem("tasks", JSON.stringify(todos));
+  // }, [inputRef, todos]);
+
   useEffect(() => {
     inputRef.current.focus();
-  }, []);
+  }, [inputRef]);
 
   return (
     <form onSubmit={handeSubmit} className="flex w-full">

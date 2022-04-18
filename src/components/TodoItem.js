@@ -33,7 +33,7 @@ const TodoItem = ({ item }) => {
       } flex justify-between items-center bg-white shadow-lg rounded-lg mb-3 px-4 py-2 text-lg`}
     >
       <h4
-        className="font-semibold"
+        className="font-semibold w-full"
         onClick={() => dispatch({ type: TOGGLE_TASK, payload: item.id })}
       >
         {item.todo}
